@@ -1,30 +1,27 @@
 import java.util.*;
 class Frequency
-{
-    public static void main(String arr[])
+  {
+    public static void main(String args[])
     {
-        Scanner sc = new Scanner(System.in);
-        int num,i,count,digit,temp;
-        System.out.println("Enter any Number : ");
-        num=sc.nextInt();
-        System.out.println("Digit\tFrequency");
-        for(i=0;i<=9;i++)
+      int n,x,count=0,i=0;
+      Scanner sc=new Scanner(System.in);
+      System.out.println("Enter the number of elements in array:");
+      n=sc.nextInt();
+      int a[]=new int[n];
+      System.out.println("Enter all elements:");
+      for(i=0;i<n;i++)
         {
-            count=0;
-            temp=num;
-            while(temp>0)
-            {
-                digit=temp%10;
-                if(digit==i)
-                {
-                    count++;
-                }
-                temp=temp/10;
-            }
-            if(count>0)
-            {
-                System.out.println(i+"\t"+count);
-            }
+          a[i]=sc.nextInt();
         }
+      System.out.println("Enter the element of which you want the frequency:");
+      x=sc.nextInt();
+      for(i=0;i<n;i++)
+        {
+          if(a[i]==x)
+          {
+            count++;
+          }
+        }
+      System.out.println("Frequency of the element is:"+count);
     }
-}
+  }
